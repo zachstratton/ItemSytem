@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System;
 
@@ -20,7 +21,6 @@ namespace Drottin.ItemSystem
         public ISWeapon()
         {
             _equipmentSlot = new ISEquipmentSlot();
-            _prefab = new GameObject();
         }
 
         public ISWeapon(int durability, int maxDurability, ISEquipmentSlot equipmentSlot, GameObject prefab)
@@ -103,5 +103,28 @@ namespace Drottin.ItemSystem
             get { return _prefab; }
         }
 
+
+        //new script later
+        public override void OnGUI()
+        {
+            base.OnGUI();
+
+            _minDamage = System.Convert.ToInt32(EditorGUILayout.TextField("Damage: ", _minDamage.ToString()));
+            _durability = System.Convert.ToInt32(EditorGUILayout.TextField("Durability: ", _durability.ToString()));
+            _maxDurability = System.Convert.ToInt32(EditorGUILayout.TextField("Durability: ", _maxDurability.ToString()));
+
+            DisplayEquipmentSlot();
+            DisplayPrefab();
+        }
+
+        public void DisplayEquipmentSlot()
+        {
+            GUILayout.Label("Quipe");
+        }
+
+        public void DisplayPrefab()
+        {
+            GUILayout.Label("prefab");
+        }
     }
 }

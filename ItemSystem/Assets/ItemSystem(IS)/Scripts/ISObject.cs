@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 namespace Drottin.ItemSystem
@@ -46,6 +47,29 @@ namespace Drottin.ItemSystem
         {
             get { return _value; }
             set { _value = value; }
+        }
+
+
+        //code will be placed in new class 
+        public virtual void OnGUI()
+        {
+            GUILayout.BeginVertical();
+            _name = EditorGUILayout.TextField("Name: ", Name);
+            _value = System.Convert.ToInt32(EditorGUILayout.TextField("Value: ", _value.ToString()));
+            _burden = System.Convert.ToInt32(EditorGUILayout.TextField("Burden: ", _burden.ToString()));
+            DisplayIcon();
+            DisplayQuality();
+            GUILayout.EndVertical();
+        }
+
+        public void DisplayIcon()
+        {
+            GUILayout.Label("ICON");
+        }
+
+        public void DisplayQuality()
+        {
+            GUILayout.Label("Quality");
         }
     }
 }
