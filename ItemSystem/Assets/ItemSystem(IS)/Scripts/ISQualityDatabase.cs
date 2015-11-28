@@ -5,7 +5,7 @@ using UnityEditor;
 using System.Linq;                      //needed for EletementAT
 
 
-namespace Triangle.ItemSystem
+namespace Drottin.ItemSystem
 {
     public class ISQualityDatabase : ScriptableObjectDatabase<ISQuality>
     {

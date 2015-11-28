@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-namespace Triangle.ItemSystem
+namespace Drottin.ItemSystem
 {
     public interface IISObject
     {

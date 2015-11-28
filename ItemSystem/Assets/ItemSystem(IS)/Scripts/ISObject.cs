@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Triangle.ItemSystem
+namespace Drottin.ItemSystem
 {
     [System.Serializable]
     public class ISObject : IISObject

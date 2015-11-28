@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Triangle
+namespace Drottin
 {
     public class ScriptableObjectDatabase<T> : ScriptableObject where T : class
     {

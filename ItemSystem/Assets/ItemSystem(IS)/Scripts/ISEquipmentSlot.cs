@@ -2,12 +2,18 @@
 using System.Collections;
 
 
-namespace Triangle.ItemSystem
+namespace Drottin.ItemSystem
 {
     public class ISEquipmentSlot : IISEquipmentSlot
     {
         [SerializeField] string _name;
         [SerializeField] Sprite _icon;
+
+        public ISEquipmentSlot()
+        {
+            _name = "Name";
+            _icon = new Sprite();
+        }
 
         public string Name
         {

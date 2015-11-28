@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
-namespace Triangle.ItemSystem.Editor
+namespace Drottin.ItemSystem.Editor
 {
     public partial class ISQualityDatabaseEditor
     {

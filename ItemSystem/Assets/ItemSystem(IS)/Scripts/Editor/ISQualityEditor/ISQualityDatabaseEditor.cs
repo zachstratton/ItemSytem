@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
-namespace Triangle.ItemSystem.Editor
+namespace Drottin.ItemSystem.Editor
 {
     public partial class ISQualityDatabaseEditor : EditorWindow
     {
@@ -19,7 +19,7 @@ namespace Triangle.ItemSystem.Editor
 
 
 
-        [MenuItem("ItemDatabas/Database/Quality Editor %#i")]
+        [MenuItem("GameItems/Database/Quality Editor %#o")]
         public static void Init()
         {
             ISQualityDatabaseEditor window = EditorWindow.GetWindow<ISQualityDatabaseEditor>();
