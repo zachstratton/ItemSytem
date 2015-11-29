@@ -124,7 +124,7 @@ namespace Drottin.ItemSystem
 
         public void DisplayPrefab()
         {
-            GUILayout.Label("prefab");
+            _prefab = EditorGUILayout.ObjectField("Prefab", _prefab, typeof(GameObject), false) as GameObject;
         }
     }
 }

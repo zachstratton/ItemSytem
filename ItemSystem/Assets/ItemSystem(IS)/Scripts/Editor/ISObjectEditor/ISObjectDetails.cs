@@ -49,9 +49,11 @@ namespace Drottin.ItemSystem.Editor
             else
             {
 
-                if (GUILayout.Button("Save Weapon"))
+                if (GUILayout.Button("Save"))
                 {
                     toggleNewWeaponDetails = false;
+
+                    database.Add(tempWeapon);
                     tempWeapon = null;
                 }
 
