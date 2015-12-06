@@ -5,9 +5,8 @@ using System;
 
 namespace Drottin.ItemSystem
 {
-
     [System.Serializable]
-    public class ISWeapon : ISObject, IISWeapon, IISDestructible, IISEquipable, IISGameObject
+    public class ISWeapon : ISObject, IISWeapon, IISDestructible, IISGameObject
     {
         [SerializeField]int _minDamage;
         [SerializeField]int _durability;
@@ -17,6 +16,7 @@ namespace Drottin.ItemSystem
         [SerializeField]
         GameObject _prefab;
 
+        public EquipmentSlot equipmentSlot;
 
         public ISWeapon()
         {
@@ -91,13 +91,6 @@ namespace Drottin.ItemSystem
             get { return _equipmentSlot; }
         }
 
-
-        public bool Equip()
-        {
-            throw new NotImplementedException();
-        }
-
-
         public GameObject Prefab
         {
             get { return _prefab; }
@@ -119,12 +112,13 @@ namespace Drottin.ItemSystem
 
         public void DisplayEquipmentSlot()
         {
-            GUILayout.Label("Quipe");
+            equipmentSlot = (EquipmentSlot)EditorGUILayout.EnumPopup("Equipment Slot", equipmentSlot);
         }
 
         public void DisplayPrefab()
         {
-            GUILayout.Label("prefab");
+            _prefab = EditorGUILayout.ObjectField("Prafeb", _prefab, typeof(GameObject), false) as GameObject;
         }
+
     }
 }

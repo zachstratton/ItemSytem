@@ -8,9 +8,9 @@ namespace Drottin.ItemSystem
     public class ISObject : IISObject
     {
         [SerializeField]
-        Sprite _icon;
-        [SerializeField]
         string _name;
+        [SerializeField]
+        Sprite _icon;
         [SerializeField]
         int _value;
         [SerializeField]
@@ -51,6 +51,10 @@ namespace Drottin.ItemSystem
 
 
         //code will be placed in new class 
+        ISQualityDatabase qdb;
+        int qualitySelectedIndex = 0;
+        string[] option;
+
         public virtual void OnGUI()
         {
             GUILayout.BeginVertical();
@@ -64,12 +68,32 @@ namespace Drottin.ItemSystem
 
         public void DisplayIcon()
         {
-            GUILayout.Label("ICON");
+            _icon = EditorGUILayout.ObjectField("Icon", _icon, typeof(Sprite), false) as Sprite;
         }
+
+
+
+        public int SelectedQualityID
+        {
+            get { return qualitySelectedIndex; }
+        }
+
+        public ISObject()
+        {
+            string DATABASE_NAME = @"ISQualityDatabase.asset";
+            string DATABASE_PATH = @"Database";
+            qdb = ISQualityDatabase.GetDatabase<ISQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+
+            option = new string[qdb.Count];
+            for (int cnt = 0; cnt < qdb.Count; cnt++)
+                option[cnt] = qdb.Get(cnt).Name;
+        }
+
 
         public void DisplayQuality()
         {
-            GUILayout.Label("Quality");
+            qualitySelectedIndex = EditorGUILayout.Popup("Quality", qualitySelectedIndex, option);
+            _quality = qdb.Get(SelectedQualityID);
         }
     }
 }
