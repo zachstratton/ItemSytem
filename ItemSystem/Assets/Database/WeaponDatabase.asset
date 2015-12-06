@@ -11,15 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7177095c6920df4fbacfc1aefaeb71a, type: 3}
   m_Name: WeaponDatabase
   m_EditorClassIdentifier: 
-  database:
-  - _name: gggg
-    _icon: {fileID: 0}
-    _value: 0
-    _burden: 0
-    _quality:
-      _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-      _name: Rare
-    _minDamage: 0
-    _durability: 0
-    _maxDurability: 0
-    _prefab: {fileID: 195180, guid: d775433b7f717714d936974311ceb607, type: 2}
+  database: []

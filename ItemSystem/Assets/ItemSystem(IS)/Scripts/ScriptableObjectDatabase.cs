@@ -59,8 +59,8 @@ namespace Drottin
             if (db == null)
             {
                 //check to see if fodler exists
-                if (!AssetDatabase.IsValidFolder("Assets" + dbPath))
-                    AssetDatabase.CreateFolder("Assets", dbPath);
+ /*               if (!AssetDatabase.IsValidFolder("Assets" + dbPath))
+                    AssetDatabase.CreateFolder("Assets", dbPath);*/
 
                 //create the database and refresh the assestdatabase
                 db = ScriptableObject.CreateInstance<U>() as U;
